@@ -110,7 +110,7 @@ export default function Chat() {
   const id = useId();
   const maxVolumeRef = useRef(0);
   const minVolumeRef = useRef(-100);
-  const [displayDebug, setDisplayDebug] = useState(false);
+  const [displayDebug, setDisplayDebug] = useState(true);
   const [isStarted, setIsStarted] = useState(false);
   const [phase, setPhase] = useState("not inited");
   const [transcription, setTranscription] = useState("");
@@ -322,7 +322,7 @@ export default function Chat() {
   return (
     <>
       <canvas ref={canvasRef} style={{ display: "none" }} />
-      <div className="antialiased w-screen h-screen p-4 flex flex-col justify-center items-center bg-black">
+      <div className="antialiased w-screen h-screen py-4 flex flex-col justify-center items-center bg-black">
         <div className="w-full h-full sm:container sm:h-auto grid grid-rows-[auto_1fr] grid-cols-[1fr] sm:grid-cols-[2fr_1fr] sm:grid-rows-[1fr] justify-content-center bg-black">
           <div className="relative">
             <video
@@ -372,31 +372,31 @@ export default function Chat() {
               Start session
             </button>
           )}
-          <button
+          {/* <button
             className="px-4 py-2 bg-gray-700 rounded-md disabled:opacity-50"
             onClick={() => reload()}
           >
             Regenerate
-          </button>
-          <button
+          </button> */}
+          {/* <button
             className="px-4 py-2 bg-gray-700 rounded-md disabled:opacity-50"
             onClick={() => setDisplayDebug((p) => !p)}
           >
             Debug
-          </button>
-          <input
+          </button> */}
+          {/* <input
             type="password"
             className="px-4 py-2 bg-gray-700 rounded-md"
             value={token}
             placeholder="OpenAI API key"
             onChange={(e) => setToken(e.target.value)}
-          />
-          <input
+          /> */}
+          {/* <input
             className="px-4 py-2 bg-gray-700 rounded-md"
             value={lang}
             placeholder="Optional language code"
             onChange={(e) => setLang(e.target.value)}
-          />
+          /> */}
         </div>
       </div>
       <div
@@ -404,12 +404,12 @@ export default function Chat() {
           displayDebug ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div
+        {/* <div
           className="absolute z-10 top-4 right-4 opacity-50 cursor-pointer"
           onClick={() => setDisplayDebug(false)}
         >
           ⛌
-        </div>
+        </div> */}
         <div className="space-y-8">
           <div className="space-y-2">
             <div className="font-semibold opacity-50">Phase:</div>
